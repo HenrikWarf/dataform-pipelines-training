@@ -227,22 +227,43 @@ Dataform allows you to implement data quality tests, called assertions, to ensur
 
 | Assertion Type      | Description                                                                 |
 | ------------------- | --------------------------------------------------------------------------- |
-| Uniqueness          | Ensures that a column contains only unique values.                           |
-| NotNull             | Checks if a column contains any null values.                                |
-| GreaterThan         | Verifies that values in a column are greater than a specified value.        |
-| Referential Integrity | Ensures that relationships between tables are maintained.                    |
+| uniqueKey           | This condition asserts that, in a specified column, no table rows have the same value. |
+| nonNull             | This condition asserts that the specified columns are not null across all table rows. This condition is used for columns that can never be null. |
+| rowConditions       | This condition asserts that all table rows follow the custom logic you define. |
+| uniqueKeys          | This condition asserts that, in the specified columns, no table rows have the same value. |
 
 **Example of Assertions:**
 
 ```sql
 config {
-  type: "table",
-  name: "my_table",
+  type: "incremental",
   assertions: {
-    uniqueKey: "my_column",
-    notNull: "another_column"
+    rowConditions: [
+      'signup_date is null or signup_date > "2022-08-01"',
+      'email like "%@%.%"'
+    ]
   }
 }
+SELECT ...
+```
+**Custom Assertions**
+
+Manual assertions are SQL queries that you write in a dedicated SQLX file. A manual assertion SQL query must return zero rows. 
+If the query returns rows when executed, the assertion fails.
+
+The following code sample shows a manual assertion in a SQLX file that asserts that fields A, B, and c are never NULL in sometable:
+
+```sql
+config { type: "assertion" }
+
+SELECT
+  *
+FROM
+  ${ref("sometable")}
+WHERE
+  a IS NULL
+  OR b IS NULL
+  OR c IS NULL
 ```
 
 For more information on data quality testing in Dataform, refer to the Dataform documentation: [Dataform Assertions](https://cloud.google.com/dataform/docs/assertions)
