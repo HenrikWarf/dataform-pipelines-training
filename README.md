@@ -175,7 +175,7 @@ To achieve code reuse across multiple Dataform repositories, you can leverage pa
 
 It's important to highlight that the documentation created in Dataform is directly pushed to BigQuery. This seamless integration allows for easy access to documentation within BigQuery and facilitates the use of other BigQuery tools for data discovery and exploration.
 
-For detailed information on workflow development, refer to the Dataform documentation: [Create Repository](https://cloud.google.com/dataform/docs/create-repository)
+For detailed information on workflow development, refer to the Dataform documentation: [SQL Workflows](https://cloud.google.com/dataform/docs/sql-workflows)
 
 ## 4. Workflow Compilation and Execution
 
@@ -191,7 +191,9 @@ Dataform offers various options for scheduling workflow executions:
 *   Workflows and Cloud Scheduler: Use Cloud Scheduler to trigger Dataform workflows.
 *   Cloud Composer: Orchestrate Dataform workflows using Cloud Composer.
 
-Learn more about workflow compilation and execution in the Dataform documentation: [Dataform Overview](https://cloud.google.com/dataform/docs/overview)
+Learn more about workflow compilation and execution in the Dataform documentation: [Code Lifecycle](https://cloud.google.com/dataform/docs/code-lifecycle)
+
+Learn more about scheduling options in the Dataform documentation: [Dataform Scheduling](https://cloud.google.com/dataform/docs/workflow-configurations)
 
 ## 5. Data Quality Testing
 
