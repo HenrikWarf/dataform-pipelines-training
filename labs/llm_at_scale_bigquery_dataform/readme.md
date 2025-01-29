@@ -173,6 +173,8 @@ The first thing to do is to edit the package.json and dataform.json so it will w
 
 **Enter information into dataform.json.**
 
+!! dataform.json has been deprecated in Dataform core 3.0. Please use workflow_settings.yaml instead. !! (see instructions below)
+
 The dataform.json file configures basic settings required to compile your Dataform project:
 
 * warehouse: must be set to bigquery
@@ -192,6 +194,29 @@ The dataform.json file configures basic settings required to compile your Datafo
       "defaultDatabase": "",
       "defaultLocation": ""
     }
+
+------------
+**About workflow_settings.yaml**
+
+The workflow_settings.yaml file, introduced in Dataform core 3.0, stores Dataform workflow settings in the YAML format.
+The following code sample shows a sample workflow_settings.yaml file:
+
+```yaml
+  defaultProject: my-gcp-project-id
+  defaultDataset: dataform
+  defaultLocation: australia-southeast2
+  defaultAssertionDataset: dataform_assertions
+```
+In the preceding code sample, the key-value pairs are described as follows:
+
+*   **defaultProject:** Your BigQuery Google Cloud project ID.
+*   **defaultDataset:** The BigQuery dataset in which Dataform creates assets, called dataform by default.
+*   **defaultLocation:** Your default BigQuery dataset region. For more information on BigQuery dataset locations, see Dataset locations In this location, Dataform processes your code and stores executed data. This processing region has to match the location of your BigQuery datasets, but does not need to match the Dataform repository region.
+*   **defaultAssertionDataset:** The BigQuery dataset in which Dataform creates views with assertion results, called dataform_assertions by default.
+
+Learn more about repositories and workspaces in the Dataform documentation: [Create Repository](https://cloud.google.com/dataform/docs/create-repository)
+
+------------
 
 After editing these two files it could be a good idea to commit and push your code to your git repository. For more details regarding this topic see the documentation [here](https://cloud.google.com/dataform/docs/version-control).
 
