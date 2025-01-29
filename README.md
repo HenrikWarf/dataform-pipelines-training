@@ -193,7 +193,7 @@ To achieve code reuse across multiple Dataform repositories, you can leverage pa
 
 It's important to highlight that the documentation created in Dataform is directly pushed to BigQuery. This seamless integration allows for easy access to documentation within BigQuery and facilitates the use of other BigQuery tools for data discovery and exploration.
 
-For detailed information on workflow development, refer to the Dataform documentation: [SQL Workflows](https://cloud.google.com/dataform/docs/sql-workflows)
+For detailed information on javascript in Dataform, refer to the Dataform documentation: [Javascript in Dataform](https://cloud.google.com/dataform/docs/javascript-in-dataform)
 
 ## 4. Workflow Compilation and Execution
 
