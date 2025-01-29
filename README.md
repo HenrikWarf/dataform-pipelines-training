@@ -217,6 +217,7 @@ config {
     notNull: "another_column"
   }
 }
+```
 
 For more information on data quality testing in Dataform, refer to the Dataform documentation: [Dataform Overview](https://cloud.google.com/dataform/docs/overview)
 
