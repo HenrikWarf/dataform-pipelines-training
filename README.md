@@ -52,6 +52,24 @@ Dataform also allows you to create workspaces within a repository for developmen
 *   **Workspace:** An isolated environment for developing and testing Dataform code.
 *   **Version Control:** Using Git to track changes and manage file versions.
 
+**About workflow_settings.yaml**
+
+The workflow_settings.yaml file, introduced in Dataform core 3.0, stores Dataform workflow settings in the YAML format.
+The following code sample shows a sample workflow_settings.yaml file:
+
+```yaml
+  defaultProject: my-gcp-project-id
+  defaultDataset: dataform
+  defaultLocation: australia-southeast2
+  defaultAssertionDataset: dataform_assertions
+```
+In the preceding code sample, the key-value pairs are described as follows:
+
+*   **defaultProject:** Your BigQuery Google Cloud project ID.
+*   **defaultDataset:** The BigQuery dataset in which Dataform creates assets, called dataform by default.
+*   **defaultLocation:** Your default BigQuery dataset region. For more information on BigQuery dataset locations, see Dataset locations In this location, Dataform processes your code and stores executed data. This processing region has to match the location of your BigQuery datasets, but does not need to match the Dataform repository region.
+*   **defaultAssertionDataset:** The BigQuery dataset in which Dataform creates views with assertion results, called dataform_assertions by default.
+
 Learn more about repositories and workspaces in the Dataform documentation: [Create Repository](https://cloud.google.com/dataform/docs/create-repository)
 
 ## 3. Workflow Development
