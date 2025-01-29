@@ -268,7 +268,71 @@ WHERE
 
 For more information on data quality testing in Dataform, refer to the Dataform documentation: [Dataform Assertions](https://cloud.google.com/dataform/docs/assertions)
 
-## 6. Resources
+
+## 6. Best practices for repository size
+
+Repository size impacts multiple aspects of development in Dataform, such as:
+
+*   Collaboration
+*   Codebase readability
+*   Development processes
+*   Workflow compilation
+*   Workflow execution
+
+Dataform enforces API quotas and limits on compilation resources. Large repository size can cause your repository to exceed these quotas and limits. This can lead to failed compilation and execution of your SQL workflow.
+
+To mitigate that risk, we recommend splitting large repositories. When you split a large repository, you divide a large SQL workflow into a number of smaller SQL workflows housed in different repositories and connected by cross-repository dependencies.
+
+This approach lets you adhere to Dataform quotas and limits, fine-grain processes and permissions, and improve codebase readability and collaboration. However, managing split repositories can be more challenging than managing a single repository.
+
+To learn more about the impact of repository size in Dataform and best practices for splitting repositories, see [Splitting repositories](https://cloud.google.com/dataform/docs/splitting-repositories).
+
+## 7. Best practices for repository structure
+
+We recommend structuring files in the `definitions` directory to reflect the stages of your workflow. Keep in mind that you can adopt a custom structure that best fits your needs.
+
+The following recommended structure of `definitions` subdirectories reflects the key stages of most SQL workflows:
+
+*   `sources`, storing data source declarations
+*   `intermediate`, storing data transformation logic
+*   `output`, storing definitions of output tables
+*   Optional: `extras`, storing additional files
+
+Names of all files in Dataform must conform to BigQuery table naming guidelines. We recommend that the names of files in the `definitions` directory in a Dataform repository reflect the subdirectory structure.
+
+To learn more about best practices for structuring and naming files in a repository, see [Structuring code in a repository](https://cloud.google.com/dataform/docs/structure-repositories).
+
+## 8. Best practices for code lifecycle
+
+The default code lifecycle in Dataform consists of the following phases:
+
+1.  **Development** of SQL workflow code in Dataform workspaces. You can develop with Dataform core or exclusively with JavaScript.
+2.  **Compilation** of your code into a *compilation result* using settings from your *workflow settings file*. You can configure custom compilation results with release configurations and workspace compilation overrides.
+    *   With *release configurations*, you can configure custom compilation results of your whole repository. You can later schedule their execution in *workflow configurations*.
+    *   With *workspace compilation overrides*, you can configure compilation overrides for all workspaces in your repository, creating custom compilation results of each workspace.
+3.  **Execution** of the compilation result in BigQuery. You can schedule executions or repository compilation results with *workflow configurations*.
+
+To manage code lifecycle in Dataform, you can create execution environments, for example, development, staging, and production.
+
+To learn more about code lifecycle in Dataform, see [Introduction to code lifecycle in Dataform](https://cloud.google.com/dataform/docs/code-lifecycle).
+
+You can select to keep your execution environments in a single repository, or in multiple repositories.
+
+### 9. Execution environments in a single repository
+
+You can create isolated execution environments such as development, staging, and production in a single Dataform repository with *workspace compilation overrides* and *release configurations*.
+
+You can create isolated execution environments the following ways:
+
+*   Split development and production tables by schema
+*   Split development and production tables by schema and Google Cloud project
+*   Split development, staging, and production tables per Google Cloud project
+
+Then, you can schedule executions in staging and production environments with *workflow configurations*. We recommend triggering executions manually in the development environment.
+
+To learn more about best practices for managing code lifecycle in Dataform, see [Managing code lifecycle](https://cloud.google.com/dataform/docs/managing-code-lifecycle).
+
+## 10. Resources
 
 Dataform provides various resources to help users understand and utilize its features effectively. These resources include:
 
@@ -279,7 +343,7 @@ Dataform provides various resources to help users understand and utilize its fea
 
 You can find these resources in the Dataform documentation: [Dataform Docs](https://cloud.google.com/dataform/docs)
 
-## 7. Summary
+## 11. Summary
 
 Dataform offers a robust and efficient way to manage data transformation workflows in BigQuery. By leveraging its 
 features such as modularity, version control, automated testing, and dependency management, data teams can improve the quality, maintainability, and reliability of their data pipelines. This guide has covered the essential aspects of Dataform, and the links to the Dataform documentation provide further details for those who want to explore specific topics in greater depth.
