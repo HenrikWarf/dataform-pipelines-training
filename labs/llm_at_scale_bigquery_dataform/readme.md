@@ -302,9 +302,9 @@ After the configurations is set up we use a BigQuery function to CREATE a new mo
       dependencies: ["create_dataset"]
     }
     
-    CREATE OR REPLACE MODEL llm_model.llm_vertex_model
-      REMOTE WITH CONNECTION `us.llm-conn`
-      OPTIONS (remote_service_type = 'CLOUD_AI_LARGE_LANGUAGE_MODEL_V1');
+    CREATE OR REPLACE MODEL `llm_model.llm_gemini_model`
+            REMOTE WITH CONNECTION `us.llm-conn`
+            OPTIONS(ENDPOINT = 'gemini-1.5-flash-002');
 
 Link to an overview of the available [foundational models in Vertex AI.](https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models)
 
