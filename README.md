@@ -26,6 +26,10 @@ We will be adding video content to this guide to help you understand the concept
 
 [video coming soon] 
 
+### Dataform environments and developer workflows
+
+[video coming soon] 
+
 ## 1. Introduction to Dataform
 
 Dataform is an open-source framework for managing and orchestrating SQL-based transformations in BigQuery. It simplifies the process of building, testing, and deploying data pipelines by providing a framework for managing SQL-based transformations.
