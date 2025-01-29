@@ -318,7 +318,7 @@ To learn more about code lifecycle in Dataform, see [Introduction to code lifecy
 
 You can select to keep your execution environments in a single repository, or in multiple repositories.
 
-### 9. Execution environments in a single repository
+## 9. Execution environments in a single repository
 
 You can create isolated execution environments such as development, staging, and production in a single Dataform repository with *workspace compilation overrides* and *release configurations*.
 
