@@ -98,7 +98,9 @@ This is where Google Cloud’s Data Cloud services can help. Lets now go through
 
 Dataform is a fully managed service that helps data teams build, version control, and orchestrate SQL workflows in BigQuery. It provides an end-to-end experience for data transformation, including:
 
-![Dataform directly integrated into BigQuery](https://cdn-images-1.medium.com/max/2000/1*eVUYj8i0kAzAm375mLuTXg.png)*Dataform directly integrated into BigQuery*
+![Dataform directly integrated into BigQuery](https://cdn-images-1.medium.com/max/2000/1*eVUYj8i0kAzAm375mLuTXg.png)
+
+*Dataform directly integrated into BigQuery*
 
 * Table definition: Dataform provides a central repository for managing table definitions, column descriptions, and data quality assertions. This makes it easy to keep track of your data schema and ensure that your data is consistent and reliable.
 
