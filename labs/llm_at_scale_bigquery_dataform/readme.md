@@ -322,7 +322,7 @@ This is performed in the *sentiment_inference.sqlx* file.
         * EXCEPT (ml_generate_text_llm_result, ml_generate_text_status)
     FROM
       ML.GENERATE_TEXT(
-        MODEL `llm_model.llm_vertex_model`,
+        MODEL `llm_model.llm_gemini_model`,
         (
       SELECT
             CONCAT('''Tell me whether the following movie review sentiment is positive or negative or neutral. 
