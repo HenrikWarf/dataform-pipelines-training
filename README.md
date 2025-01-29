@@ -42,6 +42,8 @@ Dataform is an open-source framework for managing and orchestrating SQL-based tr
 *   **Dependency Management:** Define dependencies between models and tasks, ensuring the correct execution order.
 *   **Improved Data Pipeline Maintainability:** Simplifies the management and maintenance of data pipelines.
 
+![Dataform Overview](dataform-overview.png)
+
 For a comprehensive overview of Dataform, refer to the Dataform documentation: [Dataform Overview](https://cloud.google.com/dataform/docs/overview)
 
 ## 2. Repositories and Workspaces
