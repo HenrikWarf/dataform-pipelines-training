@@ -239,7 +239,7 @@ config {
 }
 ```
 
-For more information on data quality testing in Dataform, refer to the Dataform documentation: [Dataform Overview](https://cloud.google.com/dataform/docs/overview)
+For more information on data quality testing in Dataform, refer to the Dataform documentation: [Dataform Assertions](https://cloud.google.com/dataform/docs/assertions)
 
 ## 6. Resources
 
