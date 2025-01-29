@@ -302,7 +302,7 @@ After the configurations is set up we use a BigQuery function to CREATE a new mo
       dependencies: ["create_dataset"]
     }
     
-    CREATE OR REPLACE MODEL `llm_model.llm_gemini_model`
+    CREATE OR REPLACE MODEL `llm_model.llm_vertex_model`
             REMOTE WITH CONNECTION `us.llm-conn`
             OPTIONS(ENDPOINT = 'gemini-1.5-flash-002');
 
@@ -322,7 +322,7 @@ This is performed in the *sentiment_inference.sqlx* file.
         * EXCEPT (ml_generate_text_llm_result, ml_generate_text_status)
     FROM
       ML.GENERATE_TEXT(
-        MODEL `llm_model.llm_gemini_model`,
+        MODEL `llm_model.llm_vertex_model`,
         (
       SELECT
             CONCAT('''Tell me whether the following movie review sentiment is positive or negative or neutral. 

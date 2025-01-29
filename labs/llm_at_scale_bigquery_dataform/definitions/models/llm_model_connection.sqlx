@@ -3,6 +3,6 @@ config {
   dependencies: ["create_dataset"]
 }
 
-CREATE OR REPLACE MODEL `llm_model.llm_gemini_model`
+CREATE OR REPLACE MODEL `llm_model.llm_vertex_model`
   REMOTE WITH CONNECTION `us.llm-conn`
   OPTIONS(ENDPOINT = 'gemini-1.5-flash-002');
