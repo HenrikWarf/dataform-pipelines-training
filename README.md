@@ -2,6 +2,11 @@
 
 This guide provides a concise overview of key Dataform concepts and features, empowering data teams to effectively develop, version control, and orchestrate SQL workflows in BigQuery. Each section includes a link to the Dataform documentation for in-depth learning. Also we have added a hands on lab to help you understand the concepts better which also included the use of LLM to generate the content directly in BigQuery via Dataform.
 
+Check out this Audio Summary of the Training Guide:
+
+https://github.com/user-attachments/assets/c1ea502a-ccee-40eb-9dd1-6d9703c523c0
+
+
 We will be adding video content to this guide to help you understand the concepts better [coming soon].
 
 ## Video Content: 
